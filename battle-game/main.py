@@ -1,46 +1,37 @@
-from gears.armor import Armor
 from gears.weapon import Weapon
-from characters.character import Character
+from gears.armor import Armor
+from characters.characters import Character
 from characters.barbarian import Barbarian
-from characters.wizard import Wizard
-from characters.spell import Spell
-from gears.arena import Arena
+from characters.wizard import *
 
 
-armuuure= Armor('Armuure',120)
-warmog= Armor('Warmog',150)
+Armure1 = Armor("Armure1", 35)
+Armure2 = Armor("Armure2", 50)
 
-sword=Weapon('sword',12)
-axe=Weapon('Axe',8)
+Arme1 = Weapon("Arme1", 25)
+Arme2 = Weapon("Arme2", 15)
 
-boule_de_feu=Spell('Boule de feu',50,35)
-attaque_eclair=Spell('Attaque éclaire',70,40)
+# Perso1 = Character(110, "Perso1", Arme1, Armure1)
+# Perso2 = Character(100, "Perso2", Arme2, Armure2)
 
-hades=Barbarian(200,'hades',axe,warmog)
-ares=Wizard(180,'Ares',sword,armuuure,boule_de_feu,100)
-arene=Arena(hades,ares)
+Sort1=Spell("Sort1",50,50)
 
-arene.fight(hades,ares)
 
-# while ares.hp >= 1 and hades.hp >= 1: 
+Barbare1=Barbarian(100,"Barbare1",Arme1,Armure1)
+Sorcier1=Wizard(100,"Sorcier1",Arme2,Armure2,Sort1,50)
 
 
 
 
-# ares.attack(hades)
-# print('Results: ')
-# print(ares.name,ares.hp,'HP')
-# print(hades.name,hades.hp,'HP')
-# input('---------------')
-    # if hades.hp<=1:
-        # continue
 
-# hades.attack(ares)
-# print('Results: ')
-# print(ares.name,ares.hp,'HP')
-# print(hades.name,hades.hp,'HP')
-# input('---------------')
-# if ares.hp>=0:
-    # print('Ares beated Hades')
-# else :
-    # print('Hades beated Ares with')
+
+Barbare1.attack(Sorcier1)
+print("Results: ")
+print(Barbare1.name, Barbare1.hp, "HP")
+print(Sorcier1.name, Sorcier1.hp, "HP")
+input("------------------")
+Sorcier1.attack(Barbare1)
+print("Results: ")
+print(Barbare1.name, Barbare1.hp, "HP")
+print(Sorcier1.name, Sorcier1.hp, "HP")
+input("------------------")
